@@ -234,8 +234,8 @@ function startLogin(verifycode) {
             __EVENTARGUMENT: '',
             __VIEWSTATE: $loginPage('#__VIEWSTATE').val(),
             __VIEWSTATEGENERATOR: $loginPage('#__VIEWSTATEGENERATOR').val(),
-            ctl00$ContentPlaceHolder1$TxtUserName: 'tomxtomx',
-            ctl00$ContentPlaceHolder1$TxtPassWord: '1986121tom',
+            ctl00$ContentPlaceHolder1$TxtUserName: 'eddie88',
+            ctl00$ContentPlaceHolder1$TxtPassWord: '830824',
             ctl00$ContentPlaceHolder1$TxtValida: verifycode,
             ctl00$ContentPlaceHolder1$BtnSubmit: '登 陆'
         }
@@ -337,6 +337,7 @@ function getEventIdListParams() {
         });
         response.on('end', () => {
             const body = Buffer.concat(data).toString('utf-8');
+            console.log(body)
             $matchListPage = cheerio.load(body);
             const __VIEWSTATE = $matchListPage('#__VIEWSTATE').val();
             const __VIEWSTATEGENERATOR = $matchListPage('#__VIEWSTATEGENERATOR').val();

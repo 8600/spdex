@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 // 发邮件 
 function sendMail(str, { user, pass }) {
+    return
     const host = 'smtp.qq.com';
     const port = 465;
     const transporter = nodemailer.createTransport({
