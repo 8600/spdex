@@ -606,7 +606,8 @@ function sendMail(str, { user, pass }) {
 
 // 完成推送 
 function finished() {
-    if (maildata.length===2) {
+    
+    // if (maildata.length===2) {
         // console.log('masterdata:', masterdata);
         // console.log();
         // console.log('slavedata:', slavedata);
@@ -648,23 +649,20 @@ function finished() {
             });
         }
         
-        // 5秒后重新爬比赛列表
-        setTimeout(function(){
-            // 爬取次数超过300次重新登录
-            getdatacount++;
-            if (getdatacount>300) {
-                getdatacount = 0;
-                loginFunc();
-            } else {
-                getEventIdListParams();
-            }
-        }, 5000);
-    }
-}
-
-// 发短信
-function sendMsg() {
-    
+    // } else {
+    //     console.error(maildata)
+    // }
+    // 5秒后重新爬比赛列表
+    setTimeout(function(){
+        // 爬取次数超过300次重新登录
+        getdatacount++;
+        if (getdatacount>300) {
+            getdatacount = 0;
+            loginFunc();
+        } else {
+            getEventIdListParams();
+        }
+    }, 5000);
 }
 
 // 获取比赛列表
@@ -735,8 +733,8 @@ function webService() {
             <audio id="tips2" src="/tips2.mp3" controls="controls" hidden></audio>
             <audio id="tips3" src="/tips3.mp3" controls="controls" hidden></audio>
             <div>
-                <input type="text" id="bigdeal" placeholder="大单交易量(默认${bigdeal})" hidden />
-                <button onclick="setBigdeal();" hidden>大单设置</button>
+                <input type="text" id="bigdeal" placeholder="大单交易量(默认${bigdeal})" />
+                <button onclick="setBigdeal();">大单设置</button>
                 <button onclick="audio = true; playTips();">开启音效</button>
                 <button onclick="audio = false; playTips2();">关闭音效</button>
             </div>
